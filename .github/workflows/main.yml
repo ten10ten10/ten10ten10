@@ -17,12 +17,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           github_user: ${{ github.repository_owner }}
-          
-    # 必要に応じてオプションを追加
-    # with:
-    #   github_token: ${{ secrets.GITHUB_TOKEN }}
-    #   github_user: ${{ github.repository_owner }}
-    #   # 色のテーマを変更する場合 (例: 'dark', 'solarized', 'radical' など)
-    #   theme: 'dark'
-    #   # Z軸のスケールを調整する場合
-    #   z_scale: '1.4'
