@@ -1,10 +1,8 @@
 name: GitHub-Profile-3D-Contrib
 
 on:
-  # 毎日日本時間の午前9時に実行（UTCでは0時）
   schedule:
     - cron: "0 0 * * *"
-  # pushがあった時にも手動で実行できるようにする
   workflow_dispatch:
 
 jobs:
@@ -14,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: yoshi389111/github-profile-3d-contrib@0.7.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_user: ${{ github.repository_owner }}
+        # with: ではなく env: に変更
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
